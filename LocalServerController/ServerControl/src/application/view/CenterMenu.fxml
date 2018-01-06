@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="530.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.CenterMenuController">
+   <children>
+      <MenuButton mnemonicParsing="false" text="MenuButton">
+        <items>
+          <MenuItem fx:id="item1" mnemonicParsing="false" onAction="#item1Action" text="Database" />
+          <MenuItem fx:id="item2" mnemonicParsing="false" onAction="#item2Action" text="User" />
+        </items>
+      </MenuButton>
+      <Label layoutX="127.0" layoutY="132.0" text="Label" />
+   </children>
+</AnchorPane>
