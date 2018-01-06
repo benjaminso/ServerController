@@ -15,6 +15,7 @@ public class CenterMenuController {
 
 	public void item1Action() {
 			System.out.println("asdasdasds");
+			System.out.println("lan thu hai");
 	}
 	public void item2Action() {
 		System.out.println("mothaiba");
