@@ -9,6 +9,9 @@ public class ControllingInput {
 	public void printDemo() {
 		System.out.println("asdsad");
 	}
+	public void printDemo2() {
+		System.out.println("asdsad");
+	}
 	
 	public static void ValidateServerName(String serverName) {
 		if(serverName==null || serverName.equals(""))
