@@ -25,41 +25,49 @@ public class CenterMenuController {
 		System.out.println("mothaiba");
 	}
 	public void submitAction() {
+		boolean passAllValidation=true;
 		// Server Name validation
 		try {
 			ControllingInput.ValidateServerName(txtServername.getText());
+			lbAlertServer.setText(NASSIGN);
 		}catch(IllegalArgumentException e) {
 			if(e!=null) {
-				//System.out.println("asdasdasd");
 				lbAlertServer.setText("*");
+				passAllValidation=false;
 			}
 		}
 		// ValidateServerCapacity
 		try {
 			ControllingInput.ValidateServerCapacity(txtServerCapacity.getText());
+			lbAlertCapacity.setText(NASSIGN);
 		}catch(IllegalArgumentException e) {
 			if(e!=null) {
-				//System.out.println("ValidateServerCapacity");
 				lbAlertCapacity.setText("*");
+				passAllValidation=false;
 			}
 		}
 		//	ValidateServerOS
 		try {
 			ControllingInput.ValidateServerOS(txtServerOS.getText());
+			lbAlertOS.setText(NASSIGN);
 		}catch(IllegalArgumentException e) {
 			if(e!=null) {
-				//System.out.println("ValidateServerOS");
 				lbAlertOS.setText("*");
+				passAllValidation=false;
 			}
 		}
 		//ValidateServerAccount
 		try {
 			ControllingInput.ValidateServerAccount(txtServerAccounts.getText());
+			lbAlertAccount.setText(NASSIGN);
 		}catch(IllegalArgumentException e) {
 			if(e!=null) {
-				//System.out.println("ValidateServerAccount");
 				lbAlertAccount.setText("*");
+				passAllValidation=false;
 			}
+		}
+		if(passAllValidation) {
+			
 		}
 	}
 	public void ClearAction() {
