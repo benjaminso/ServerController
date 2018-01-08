@@ -9,7 +9,6 @@ public class ControllingInput {
 		
 	}
 	
-	
 	public static void ValidateServerName(TextField serverName) {
 		if(serverName.getText()==null || serverName.getText().isEmpty())
 			throw new IllegalArgumentException("Error!ServerName");
