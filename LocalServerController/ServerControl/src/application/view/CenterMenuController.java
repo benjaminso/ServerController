@@ -1,11 +1,12 @@
 package application.view;
-
+import application.VirtualStorage.RetrievingandStoring;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextField;
-import application.BusinessRules.ControllingInput;;
+import application.BusinessRules.ControllingInput;
+import application.BusinessRules.ServerController;
 
 public class CenterMenuController {
 
@@ -24,6 +25,7 @@ public class CenterMenuController {
 	public void item2Action() {
 		System.out.println("mothaiba");
 	}
+	
 	public void submitAction() {
 		boolean passAllValidation=true;
 		// Server Name validation
@@ -67,7 +69,11 @@ public class CenterMenuController {
 			}
 		}
 		if(passAllValidation) {
-			
+			if(ServerController.getNumberOfServers()<ServerController.MAXSERVERS) {
+				RetrievingandStoring.assignValues(txtServername.getText(), txtServerCapacity.getText(), txtServerOS.getText(), txtServerAccounts.getText());
+				ClearAction();
+			}else 
+				ViewErrorWindow.display(ServerController.MESSAGE);
 		}
 	}
 	public void ClearAction() {
@@ -81,4 +87,8 @@ public class CenterMenuController {
 		txtServerOS.setText(NASSIGN);
 		txtServerAccounts.setText(NASSIGN);
 	}
+	public void checkingAction() {
+		System.out.println(RetrievingandStoring.servers[0].getServerName());
+	}
+	
 }

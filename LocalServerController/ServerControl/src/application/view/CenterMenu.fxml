@@ -18,27 +18,27 @@
       <Label fx:id="lbAccount" layoutY="200.0" text="Number of Accounts:" />
       <TextField fx:id="txtServername" layoutX="149.0" layoutY="45.0" />
       <Button fx:id="btnSubmit" layoutX="143.0" layoutY="322.0" mnemonicParsing="false" onAction="#submitAction" prefHeight="43.0" prefWidth="84.0" text="Submit" />
-      <Label fx:id="lbAlertServer" disable="true" graphicTextGap="0.0" layoutX="299.0" layoutY="39.0" text=";" textAlignment="CENTER" textFill="RED">
+      <Label fx:id="lbAlertServer" disable="true" graphicTextGap="0.0" layoutX="300.0" layoutY="39.0" textAlignment="CENTER" textFill="RED">
          <font>
             <Font size="23.0" />
          </font></Label>
       <Label fx:id="lbServerCapacity" layoutY="100.0" text="Server Capacity:" />
       <TextField fx:id="txtServerCapacity" layoutX="149.0" layoutY="89.0" />
-      <Label fx:id="lbAlertCapacity" disable="true" graphicTextGap="0.0" layoutX="301.0" layoutY="83.0" text=";" textAlignment="CENTER" textFill="RED">
+      <Label fx:id="lbAlertCapacity" disable="true" graphicTextGap="0.0" layoutX="301.0" layoutY="83.0" textAlignment="CENTER" textFill="RED">
          <font>
             <Font size="23.0" />
          </font>
       </Label>
       <Label fx:id="lbOS" layoutY="147.0" text="OS: " />
       <TextField fx:id="txtServerOS" layoutX="149.0" layoutY="135.0" />
-      <Label fx:id="lbAlertOS" disable="true" graphicTextGap="0.0" layoutX="301.0" layoutY="130.0" text=";" textAlignment="CENTER" textFill="RED">
+      <Label fx:id="lbAlertOS" disable="true" graphicTextGap="0.0" layoutX="301.0" layoutY="130.0" textAlignment="CENTER" textFill="RED">
          <font>
             <Font size="23.0" />
          </font>
       </Label>
       <Label fx:id="lbServerName" layoutY="47.0" text="Server Name:" />
       <TextField fx:id="txtServerAccounts" layoutX="149.0" layoutY="190.0" prefHeight="25.0" prefWidth="54.0" />
-      <Label fx:id="lbAlertAccount" disable="true" graphicTextGap="0.0" layoutX="205.0" layoutY="183.0" text=";" textAlignment="CENTER" textFill="RED">
+      <Label fx:id="lbAlertAccount" disable="true" graphicTextGap="0.0" layoutX="205.0" layoutY="183.0" textAlignment="CENTER" textFill="RED">
          <font>
             <Font size="23.0" />
          </font>
@@ -49,5 +49,6 @@
             <Font size="11.0" />
          </font>
       </Label>
+      <Button layoutX="408.0" layoutY="331.0" mnemonicParsing="false" onAction="#checkingAction" text="Button" />
    </children>
 </AnchorPane>
