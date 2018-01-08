@@ -1,32 +1,29 @@
 package application.BusinessRules;
 
+import javafx.scene.control.TextField;
+
 public class ControllingInput {
 
-
+	//private Label serverName,serverCapacity, serverOS, server account;
 	public ControllingInput() {
 		
 	}
-	public void printDemo() {
-		System.out.println("asdsad");
-	}
-	public void printDemo2() {
-		System.out.println("asdsad");
-	}
 	
-	public static void ValidateServerName(String serverName) {
-		if(serverName==null || serverName.equals(""))
+	
+	public static void ValidateServerName(TextField serverName) {
+		if(serverName.getText()==null || serverName.getText().isEmpty())
 			throw new IllegalArgumentException("Error!ServerName");
 	}
-	public static void ValidateServerCapacity(String serverCapacity) {
-		if(serverCapacity==null || serverCapacity.equals(""))
+	public static void ValidateServerCapacity(TextField serverCapacity) {
+		if(serverCapacity.getText()==null || serverCapacity.getText().isEmpty())
 			throw new IllegalArgumentException("Error!Server Capacity");
 	}
-	public static void ValidateServerOS(String serverOS) {
-		if(serverOS==null || serverOS.equals(""))
+	public static void ValidateServerOS(TextField serverOS) {
+		if(serverOS.getText()==null || serverOS.getText().isEmpty())
 			throw new IllegalArgumentException("Error!Server OS");
 	}
-	public static void ValidateServerAccount(String serverACcount) {
-		if(serverACcount==null || serverACcount.equals(""))
+	public static void ValidateServerAccount(TextField serverAccount) {
+		if(serverAccount.getText()==null || serverAccount.getText().isEmpty())
 			throw new IllegalArgumentException("Error!Server Account");
 	}
 }

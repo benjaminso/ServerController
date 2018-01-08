@@ -1,6 +1,6 @@
 package application.BusinessRules;
 
-public abstract class ServerController {
+public class ServerController {
 	private String serverName;
 	private String serverCapacity;
 	private String serverOS;

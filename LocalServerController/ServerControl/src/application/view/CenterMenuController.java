@@ -17,7 +17,7 @@ public class CenterMenuController {
 	@FXML private Label lbAlertServer,lbAlertCapacity,lbAlertOS,lbAlertAccount;
 	private static final String NASSIGN=null;
 	ControllingInput validation=new ControllingInput();
-
+	ControllingInput validation2=new ControllingInput();
 	public void item1Action() {
 		System.out.println("asdasdasds");
 	}
@@ -28,7 +28,7 @@ public class CenterMenuController {
 		boolean passAllValidation=true;
 		// Server Name validation
 		try {
-			ControllingInput.ValidateServerName(txtServername.getText());
+			ControllingInput.ValidateServerName(txtServername);
 			lbAlertServer.setText(NASSIGN);
 		}catch(IllegalArgumentException e) {
 			if(e!=null) {
@@ -38,7 +38,7 @@ public class CenterMenuController {
 		}
 		// ValidateServerCapacity
 		try {
-			ControllingInput.ValidateServerCapacity(txtServerCapacity.getText());
+			ControllingInput.ValidateServerCapacity(txtServerCapacity);
 			lbAlertCapacity.setText(NASSIGN);
 		}catch(IllegalArgumentException e) {
 			if(e!=null) {
@@ -48,7 +48,7 @@ public class CenterMenuController {
 		}
 		//	ValidateServerOS
 		try {
-			ControllingInput.ValidateServerOS(txtServerOS.getText());
+			ControllingInput.ValidateServerOS(txtServerOS);
 			lbAlertOS.setText(NASSIGN);
 		}catch(IllegalArgumentException e) {
 			if(e!=null) {
@@ -58,7 +58,7 @@ public class CenterMenuController {
 		}
 		//ValidateServerAccount
 		try {
-			ControllingInput.ValidateServerAccount(txtServerAccounts.getText());
+			ControllingInput.ValidateServerAccount(txtServerAccounts);
 			lbAlertAccount.setText(NASSIGN);
 		}catch(IllegalArgumentException e) {
 			if(e!=null) {
