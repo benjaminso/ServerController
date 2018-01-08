@@ -53,7 +53,6 @@ public class Main extends Application {
 			mainLayout.setCenter(mainMenu);
 		}catch(Exception e) {
 			ViewErrorWindow.display("Loading Process Error!! (main-line 50)");
-			//e.printStackTrace();
 		}
 	}
 

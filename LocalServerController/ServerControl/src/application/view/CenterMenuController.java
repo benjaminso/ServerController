@@ -1,11 +1,12 @@
 package application.view;
-
+import application.VirtualStorage.RetrievingandStoring;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextField;
-import application.BusinessRules.ControllingInput;;
+import application.BusinessRules.ControllingInput;
+import application.BusinessRules.ServerController;
 
 public class CenterMenuController {
 
@@ -18,12 +19,16 @@ public class CenterMenuController {
 	private static final String NASSIGN=null;
 	ControllingInput validation=new ControllingInput();
 	ControllingInput validation2=new ControllingInput();
+	/*
+	 * It is for loading the dropdownlist*/
+	
 	public void item1Action() {
 		System.out.println("asdasdasds");
 	}
 	public void item2Action() {
 		System.out.println("mothaiba");
 	}
+	
 	public void submitAction() {
 		boolean passAllValidation=true;
 		// Server Name validation
@@ -38,9 +43,13 @@ public class CenterMenuController {
 		}
 		// ValidateServerCapacity
 		try {
-			ControllingInput.ValidateServerCapacity(txtServerCapacity);
+			ControllingInput.ValidateServerCapacity(Integer.parseInt(txtServerCapacity.getText()));
 			lbAlertCapacity.setText(NASSIGN);
-		}catch(IllegalArgumentException e) {
+		}catch(NumberFormatException e) {
+			lbAlertCapacity.setText("*");
+			passAllValidation=false;
+		}
+		catch(IllegalArgumentException e) {
 			if(e!=null) {
 				lbAlertCapacity.setText("*");
 				passAllValidation=false;
@@ -49,7 +58,7 @@ public class CenterMenuController {
 		//	ValidateServerOS
 		try {
 			ControllingInput.ValidateServerOS(txtServerOS);
-			lbAlertOS.setText(NASSIGN);
+			lbAlertOS.setText(NASSIGN); 
 		}catch(IllegalArgumentException e) {
 			if(e!=null) {
 				lbAlertOS.setText("*");
@@ -67,7 +76,11 @@ public class CenterMenuController {
 			}
 		}
 		if(passAllValidation) {
-			
+			if(ServerController.getNumberOfServers()<ServerController.MAXSERVERS) {
+				RetrievingandStoring.assignValues(txtServername.getText(), txtServerCapacity.getText(), txtServerOS.getText(), txtServerAccounts.getText());
+				ClearAction();
+			}else 
+				ViewErrorWindow.display(ServerController.MESSAGE);
 		}
 	}
 	public void ClearAction() {
@@ -80,5 +93,8 @@ public class CenterMenuController {
 		txtServerCapacity.setText(NASSIGN);
 		txtServerOS.setText(NASSIGN);
 		txtServerAccounts.setText(NASSIGN);
+	}
+	public void checkingAction() {
+		System.out.println(RetrievingandStoring.servers[0].getServerName());
 	}
 }
