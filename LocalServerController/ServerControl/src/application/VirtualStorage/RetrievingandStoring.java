@@ -1,7 +1,6 @@
 package application.VirtualStorage;
 import application.BusinessRules.*;
 import application.view.*;
-
 public class RetrievingandStoring {
 	public static final ServerController[] servers=new ServerController[ServerController.MAXSERVERS];
 	public static void assignValues(String value1, String value2, String value3, String value4) {

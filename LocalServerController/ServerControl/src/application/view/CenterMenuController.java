@@ -19,6 +19,9 @@ public class CenterMenuController {
 	private static final String NASSIGN=null;
 	ControllingInput validation=new ControllingInput();
 	ControllingInput validation2=new ControllingInput();
+	/*
+	 * It is for loading the dropdownlist*/
+	
 	public void item1Action() {
 		System.out.println("asdasdasds");
 	}
@@ -40,9 +43,13 @@ public class CenterMenuController {
 		}
 		// ValidateServerCapacity
 		try {
-			ControllingInput.ValidateServerCapacity(txtServerCapacity);
+			ControllingInput.ValidateServerCapacity(Integer.parseInt(txtServerCapacity.getText()));
 			lbAlertCapacity.setText(NASSIGN);
-		}catch(IllegalArgumentException e) {
+		}catch(NumberFormatException e) {
+			lbAlertCapacity.setText("*");
+			passAllValidation=false;
+		}
+		catch(IllegalArgumentException e) {
 			if(e!=null) {
 				lbAlertCapacity.setText("*");
 				passAllValidation=false;
@@ -51,7 +58,7 @@ public class CenterMenuController {
 		//	ValidateServerOS
 		try {
 			ControllingInput.ValidateServerOS(txtServerOS);
-			lbAlertOS.setText(NASSIGN);
+			lbAlertOS.setText(NASSIGN); 
 		}catch(IllegalArgumentException e) {
 			if(e!=null) {
 				lbAlertOS.setText("*");
@@ -90,5 +97,4 @@ public class CenterMenuController {
 	public void checkingAction() {
 		System.out.println(RetrievingandStoring.servers[0].getServerName());
 	}
-	
 }
