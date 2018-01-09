@@ -45,5 +45,12 @@
       </Label>
       <Button layoutX="408.0" layoutY="331.0" mnemonicParsing="false" onAction="#checkingAction" text="Button" />
       <ChoiceBox fx:id="choiceBox" prefWidth="150.0" />
+      <Label fx:id="lbLanguage" layoutX="343.0" layoutY="47.0" text="Web Language" />
+      <ChoiceBox fx:id="cBox" layoutX="343.0" layoutY="77.0" prefHeight="25.0" prefWidth="128.0" />
+      <Label fx:id="lbAlertLanguage" layoutX="481.0" layoutY="81.0" textFill="RED">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
