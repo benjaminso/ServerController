@@ -112,6 +112,9 @@ public class CenterMenuController  implements Initializable {
 		choiceBox.getSelectionModel().selectedIndexProperty().addListener((v, oldValue, newValue)->
 		loadCheckbox(newValue));
 	}
+	public static void checking() {
+		
+	}
 	public void loadCheckbox(Number newValue) {
 		int value=newValue.intValue();
 		System.out.println(value);
