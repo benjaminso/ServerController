@@ -22,40 +22,26 @@ public class CenterMenuController  implements Initializable {
 	@FXML private Button btnSubmit,btnClear;
 	@FXML private ChoiceBox<String> choiceBox,CBox;
 	@FXML private Label lbServerCapacity,lbAccount,lbOS,lbServerName,lbLanguage;
-	@FXML private Label lbAlertServer,lbAlertCapacity,lbAlertOS,lbAlertAccount,lbAlertLanguage;
+	@FXML private Label lbAlertServer,lbAlertCapacity,lbAlertOS,lbAlertAccount,lbAlertLanguage,lbPrintError,lbTotalErrors;
+	// for reseting all values.
 	private static final String NASSIGN=null;
-	ControllingInput validation=new ControllingInput();
-	/*
-	 * It is for loading the dropdownlist
-	 * */
 
-	/*public void item1Action() {
-		System.out.println("asdasdasds");
-	}
-	public void item2Action() {
-		System.out.println("mothaiba");
-	}*/
-	
+	// calling validation class.
+	ControllingInput validation=new ControllingInput();
+
 	/*
 	 * Submit Button action
 	 * */
 	public void submitAction() {
 		boolean passAllValidation=true;
-		// Server Name validation
-		
-		// ValidateServerCapacity
-		
-		//	ValidateServerOS
-		
-		//ValidateServerAccount
-		if(validateServerName() && validateServerCapacity()&& validateServerOS() )
-		if(passAllValidation) {
-			if(ServerController.getNumberOfServers()<ServerController.MAXSERVERS) {
-				RetrievingandStoring.assignValues(txtServername.getText(), txtServerCapacity.getText(), txtServerOS.getText(), txtServerAccounts.getText());
-				ClearAction();
-			}else 
-				ViewErrorWindow.display(ServerController.MESSAGE);
-		}
+		if(validateServerName() && validateServerCapacity() && validateServerOS() && validateServerAccount() )
+			if(passAllValidation) {
+				if(ServerController.getNumberOfServers()<ServerController.MAXSERVERS) {
+					RetrievingandStoring.assignValues(txtServername.getText(), txtServerCapacity.getText(), txtServerOS.getText(), txtServerAccounts.getText());
+					ClearAction();
+				}else 
+					ViewErrorWindow.display(ServerController.MESSAGE);
+			}
 	}
 	public boolean validateServerName() {
 		boolean passAllValidation=true;
@@ -122,22 +108,31 @@ public class CenterMenuController  implements Initializable {
 	 * Auto load the javafx
 	 */
 	public void initialize(URL arg0, ResourceBundle arg1) {
+		ClearAction();
 		Number value=0;
-		choiceBox.setValue("Account");
-		choiceBox.getItems().addAll("Account","FileServer");
+		choiceBox.setValue("File Server");
+		SetInVisibleWebServer();
+		choiceBox.getItems().addAll("File Server","Web Server");
 		loadCheckbox(value);
 		choiceBox.getSelectionModel().selectedIndexProperty().addListener((v, oldValue, newValue)->
 		loadCheckbox(newValue));
 
 	}
 	public void loadCheckbox(Number newValue) {
-		int value=newValue.intValue();
+		if(newValue.intValue()==1) {
+			SetInVisibleFileServer();
+			SetVisibleWebServer();
+		}
+		else {
+			SetInVisibleWebServer();
+			SetVisibleFileServer();
+		}
 	}
 
 	/*
 	 * set invisible for Account Server
 	 */
-	public void SetInVisibleAccountServer() {
+	public void SetInVisibleFileServer() {
 		lbAccount.setVisible(false);
 		txtServerAccounts.setVisible(false);
 		lbAlertAccount.setVisible(false);
@@ -145,10 +140,24 @@ public class CenterMenuController  implements Initializable {
 	/*
 	 * set visible for Account Servers
 	 */
-	public void SetVisibleAccountServer() {
+	public void SetVisibleFileServer() {
 		lbAccount.setVisible(true);
 		txtServerAccounts.setVisible(true);
 		lbAlertAccount.setVisible(true);
+	}
+	/*
+	 * set invisible for Account Server
+	 */
+	public void SetInVisibleWebServer() {
+		lbLanguage.setVisible(false);
+		CBox.setVisible(false);
+	}
+	/*
+	 * set visible for Account Servers
+	 */
+	public void SetVisibleWebServer() {
+		lbLanguage.setVisible(true);
+		CBox.setVisible(true);
 	}
 
 	/*
@@ -161,6 +170,8 @@ public class CenterMenuController  implements Initializable {
 		lbAlertOS.setText(NASSIGN);
 		lbAlertAccount.setText(NASSIGN);
 		lbAlertLanguage.setText(NASSIGN);
+		lbPrintError.setText(NASSIGN);
+		lbTotalErrors.setText(NASSIGN);
 
 		txtServername.setText(NASSIGN);
 		txtServerCapacity.setText(NASSIGN);

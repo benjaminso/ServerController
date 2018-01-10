@@ -18,7 +18,7 @@ public class Main extends Application {
 		ShowMainView();
 		ShowLeftMenu();
 	}
-	
+
 	private void ShowMainView() {
 		try {
 			mainLayout  = (BorderPane)FXMLLoader.load(getClass().getResource("./view/Sample.fxml"));
@@ -31,7 +31,7 @@ public class Main extends Application {
 			ViewErrorWindow.display("Loading Process Error!! (main-line 24)");
 		}
 	}
-	
+
 	private void ShowLeftMenu() {
 		try {
 			FXMLLoader loader=new FXMLLoader();
@@ -43,7 +43,7 @@ public class Main extends Application {
 			ViewErrorWindow.display("Loading Process Error!! (main-line 37)");
 		}
 	}
-	
+
 	public static void ShowCenterMenu() {
 		try {
 			FXMLLoader loader=new FXMLLoader();

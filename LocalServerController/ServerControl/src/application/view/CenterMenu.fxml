@@ -7,50 +7,52 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.BorderPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="530.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.CenterMenuController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="399.0" prefWidth="542.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.CenterMenuController">
    <children>
       <Label fx:id="lbAccount" layoutY="200.0" text="Number of Accounts:" />
-      <TextField fx:id="txtServername" layoutX="149.0" layoutY="45.0" />
-      <Button fx:id="btnSubmit" layoutX="143.0" layoutY="322.0" mnemonicParsing="false" onAction="#submitAction" prefHeight="43.0" prefWidth="84.0" text="Submit" />
-      <Label fx:id="lbAlertServer" disable="true" graphicTextGap="0.0" layoutX="300.0" layoutY="39.0" textAlignment="CENTER" textFill="RED">
+      <TextField fx:id="txtServername" layoutX="182.0" layoutY="45.0" />
+      <Button fx:id="btnSubmit" layoutX="43.0" layoutY="322.0" mnemonicParsing="false" onAction="#submitAction" prefHeight="43.0" prefWidth="84.0" text="Submit" />
+      <Label fx:id="lbAlertServer" disable="true" graphicTextGap="0.0" layoutX="406.0" layoutY="48.0" textAlignment="CENTER" textFill="RED">
          <font>
             <Font size="23.0" />
          </font></Label>
       <Label fx:id="lbServerCapacity" layoutY="100.0" text="Server Capacity:" />
-      <TextField fx:id="txtServerCapacity" layoutX="149.0" layoutY="89.0" />
-      <Label fx:id="lbAlertCapacity" disable="true" graphicTextGap="0.0" layoutX="301.0" layoutY="83.0" textAlignment="CENTER" textFill="RED">
+      <TextField fx:id="txtServerCapacity" layoutX="182.0" layoutY="89.0" />
+      <Label fx:id="lbAlertCapacity" disable="true" graphicTextGap="0.0" layoutX="406.0" layoutY="92.0" textAlignment="CENTER" textFill="RED">
          <font>
             <Font size="23.0" />
          </font>
       </Label>
       <Label fx:id="lbOS" layoutY="147.0" text="OS: " />
-      <TextField fx:id="txtServerOS" layoutX="149.0" layoutY="135.0" />
-      <Label fx:id="lbAlertOS" disable="true" graphicTextGap="0.0" layoutX="301.0" layoutY="130.0" textAlignment="CENTER" textFill="RED">
+      <TextField fx:id="txtServerOS" layoutX="182.0" layoutY="135.0" />
+      <Label fx:id="lbAlertOS" disable="true" graphicTextGap="0.0" layoutX="408.0" layoutY="138.0" textAlignment="CENTER" textFill="RED">
          <font>
             <Font size="23.0" />
          </font>
       </Label>
       <Label fx:id="lbServerName" layoutY="47.0" text="Server Name:" />
-      <TextField fx:id="txtServerAccounts" layoutX="149.0" layoutY="190.0" prefHeight="25.0" prefWidth="54.0" />
-      <Label fx:id="lbAlertAccount" disable="true" graphicTextGap="0.0" layoutX="205.0" layoutY="183.0" textAlignment="CENTER" textFill="RED">
+      <TextField fx:id="txtServerAccounts" layoutX="182.0" layoutY="190.0" prefHeight="25.0" prefWidth="54.0" />
+      <Label fx:id="lbAlertAccount" disable="true" graphicTextGap="0.0" layoutX="236.0" layoutY="193.0" textAlignment="CENTER" textFill="RED">
          <font>
             <Font size="23.0" />
          </font>
       </Label>
-      <Button fx:id="btnClear" layoutX="301.0" layoutY="322.0" mnemonicParsing="false" onAction="#ClearAction" prefHeight="43.0" prefWidth="84.0" text="Clear" />
+      <Button fx:id="btnClear" layoutX="182.0" layoutY="322.0" mnemonicParsing="false" onAction="#ClearAction" prefHeight="43.0" prefWidth="84.0" text="Clear" />
       <Label fx:id="lbError" layoutX="22.0" layoutY="244.0" textFill="RED">
          <font>
             <Font size="11.0" />
          </font>
       </Label>
-      <Button layoutX="408.0" layoutY="331.0" mnemonicParsing="false" onAction="#checkingAction" text="Button" />
-      <ChoiceBox fx:id="choiceBox" prefWidth="150.0" />
-      <Label fx:id="lbLanguage" layoutX="343.0" layoutY="47.0" text="Web Language" />
-      <ChoiceBox fx:id="cBox" layoutX="343.0" layoutY="77.0" prefHeight="25.0" prefWidth="128.0" />
-      <Label fx:id="lbAlertLanguage" layoutX="481.0" layoutY="81.0" textFill="RED">
+      <Button layoutX="318.0" layoutY="322.0" mnemonicParsing="false" onAction="#checkingAction" prefHeight="43.0" prefWidth="84.0" text="Button" />
+      <ChoiceBox fx:id="choiceBox" layoutX="3.0" layoutY="3.0" prefWidth="150.0" />
+      <Label fx:id="lbLanguage" layoutX="3.0" layoutY="200.0" text="Web Language" />
+      <ChoiceBox fx:id="CBox" layoutX="182.0" layoutY="191.0" prefHeight="25.0" prefWidth="128.0" />
+      <Label fx:id="lbAlertLanguage" layoutX="599.0" layoutY="96.0" prefHeight="25.0" prefWidth="0.0" textFill="RED">
          <font>
             <Font size="16.0" />
          </font>
       </Label>
+      <Label fx:id="lbTotalErrors" layoutX="42.0" layoutY="247.0" text="Error(s) : " />
+      <Label fx:id="lbPrintError" layoutX="129.0" layoutY="247.0" text="Label" />
    </children>
 </AnchorPane>
