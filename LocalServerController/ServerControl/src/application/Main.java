@@ -55,6 +55,18 @@ public class Main extends Application {
 			ViewErrorWindow.display("Loading Process Error!! (main-line 50)");
 		}
 	}
+	
+	public static void ShowViewingCenter() {
+		try {
+			FXMLLoader loader=new FXMLLoader();
+			loader.setLocation(Main.class.getResource("./view/CenterViewingServers.fxml"));
+			AnchorPane mainMenu;
+			mainMenu = loader.load();
+			mainLayout.setCenter(mainMenu);
+		}catch(Exception e) {
+			ViewErrorWindow.display("Loading Process Error!! (main-line 61)");
+		}
+	}
 
 	public static void main(String[] args) {
 		launch(args);

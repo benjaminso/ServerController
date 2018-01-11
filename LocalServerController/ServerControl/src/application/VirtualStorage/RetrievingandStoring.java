@@ -12,4 +12,8 @@ public class RetrievingandStoring {
 	/*public static String toString() {
 		return servers[0].getServerName();
 	} */
+	public static ServerController[] returnArray()
+	{
+		return servers;
+	}
 }

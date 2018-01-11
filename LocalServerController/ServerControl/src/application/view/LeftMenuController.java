@@ -12,4 +12,8 @@ public class LeftMenuController {
 	public void btnAddFunction() throws IOException {
 		main.ShowCenterMenu();
 	}
+	@SuppressWarnings("static-access")
+	public void btnViewFunction() throws IOException{
+		main.ShowViewingCenter();
+	}
 }
