@@ -33,15 +33,13 @@ public class CenterMenuController  implements Initializable {
 	 * Submit Button action
 	 * */
 	public void submitAction() {
-		boolean passAllValidation=true;
-		if(validateServerName() && validateServerCapacity() && validateServerOS() && validateServerAccount() )
-			if(passAllValidation) {
-				if(ServerController.getNumberOfServers()<ServerController.MAXSERVERS) {
+		if(validateServerName() && validateServerCapacity() && validateServerOS() && validateServerAccount() ) {
+			if(ServerController.getNumberOfServers()<ServerController.MAXSERVERS) {
 					RetrievingandStoring.assignValues(txtServername.getText(), txtServerCapacity.getText(), txtServerOS.getText(), txtServerAccounts.getText());
 					ClearAction();
 				}else 
 					ViewErrorWindow.display(ServerController.MESSAGE);
-			}
+		}
 	}
 	public boolean validateServerName() {
 		boolean passAllValidation=true;
@@ -108,6 +106,7 @@ public class CenterMenuController  implements Initializable {
 	 * Auto load the javafx
 	 */
 	public void initialize(URL arg0, ResourceBundle arg1) {
+		System.out.print("asdfasdf");
 		ClearAction();
 		Number value=0;
 		choiceBox.setValue("File Server");

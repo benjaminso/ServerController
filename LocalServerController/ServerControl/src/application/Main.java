@@ -24,7 +24,6 @@ public class Main extends Application {
 			mainLayout  = (BorderPane)FXMLLoader.load(getClass().getResource("./view/Sample.fxml"));
 			Scene scene = new Scene(mainLayout,600,400);
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
-			//mainLayout.setRight(null);
 			this.window.setScene(scene);
 			this.window.show();
 		} catch(Exception e) {
@@ -55,7 +54,7 @@ public class Main extends Application {
 			ViewErrorWindow.display("Loading Process Error!! (main-line 50)");
 		}
 	}
-	
+
 	public static void ShowViewingCenter() {
 		try {
 			FXMLLoader loader=new FXMLLoader();

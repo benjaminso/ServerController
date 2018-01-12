@@ -15,20 +15,23 @@ public class ServerController {
 		this.serverAccount=serverAccount;
 		numberOfServers++;
 	}
+	public static void resetnumberOfServers() {
+		numberOfServers=0;
+	}
 	public String getServerCapacity() {
-		return serverCapacity;
+		return this.serverCapacity;
 	}
 	public void setServerCapacity(String serverCapacity) {
 		this.serverCapacity = serverCapacity;
 	}
 	public String getServerOS() {
-		return serverOS;
+		return this.serverOS;
 	}
 	public void setServerOS(String serverOS) {
 		this.serverOS = serverOS;
 	}
 	public String getServerAccount() {
-		return serverAccount;
+		return this.serverAccount;
 	}
 	public void setServerAccount(String serverAccount) {
 		this.serverAccount = serverAccount;
