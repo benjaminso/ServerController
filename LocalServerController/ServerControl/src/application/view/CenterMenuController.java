@@ -34,7 +34,7 @@ public class CenterMenuController  implements Initializable {
 	 * */
 	public void submitAction() {
 		if(validateServerName() && validateServerCapacity() && validateServerOS() && validateServerAccount() ) {
-			if(ServerController.getNumberOfServers()<ServerController.MAXSERVERS) {
+			if(RetrievingandStoring.getNumberOfServers()<ServerController.MAXSERVERS) {
 					RetrievingandStoring.assignValues(txtServername.getText(), txtServerCapacity.getText(), txtServerOS.getText(), txtServerAccounts.getText());
 					ClearAction();
 				}else 
