@@ -1,6 +1,3 @@
-/**
- * 
- */
 package application.view;
 
 import javafx.geometry.Pos;
